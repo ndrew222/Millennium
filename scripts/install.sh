@@ -107,8 +107,8 @@ confirm_installation() {
     echo -e "\n:: Proceed with installation? [Y/n] \c"
     read -r proceed </dev/tty
     case "${proceed}" in
-        [Nn]*) exit 1 ;;
-        *) return 0 ;;
+        ""|[Yy]*) return 0 ;;
+        *) exit 1 ;;
     esac
 }
 
